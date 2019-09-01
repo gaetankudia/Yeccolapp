@@ -124,12 +124,7 @@ class LandingPage extends StatelessWidget {
                 child: Container(
                   height: 300.0,
                   width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AvailableImages.homePage,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
+                   
                 ),
               ),
             )
