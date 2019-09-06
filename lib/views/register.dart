@@ -18,6 +18,66 @@ class _RegisterPageState extends State<RegisterPage> {
     });
   }
 
+  List _classes = [
+    "1ère Primaire",
+    "2ème Primaire",
+    "3ème Primaire",
+    "4ème Primaire",
+    "5ème Primaire",
+    "6ème Primaire",
+    "7ème Primaire",
+    "8ème Primaire",
+    "3ème Scientifique",
+    "3ème Litteraire",
+    "3ème Electricité",
+    "3ème Electronique",
+    "3ème Coupe et Couture",
+    "3ème Ménuisierie",
+    "3ème Commerciale Informatique",
+    "4ème Scientifique",
+    "4ème Litteraire",
+    "4ème Electricité",
+    "4ème Electronique",
+    "4ème Coupe et Couture",
+    "4ème Ménuisierie",
+    "4ème Commerciale Informatique",
+    "5ème Bio-Chimie",
+    "5ème Math-Physique",
+    "5ème Litteraire",
+    "5ème Electricité",
+    "5ème Electronique",
+    "5ème Coupe et Couture",
+    "5ème Ménuisierie",
+    "5ème Commerciale Informatique",
+    "6ème Bio-Chimie",
+    "6ème Math-Physique",
+    "6ème Litteraire",
+    "6ème Electricité",
+    "6ème Electronique",
+    "6ème Coupe et Couture",
+    "6ème Ménuisierie",
+    "6ème Commerciale Informatique",
+
+  ];
+
+  List<DropdownMenuItem<String>> _dropDownMenuItems;
+  String _currentClasse;
+
+  @override
+  void initState() {
+    _dropDownMenuItems = getDropDownMenuItems();
+    _currentClasse = _dropDownMenuItems[0].value;
+    super.initState();
+  }
+
+  List<DropdownMenuItem<String>> getDropDownMenuItems() {
+    List<DropdownMenuItem<String>> items = new List();
+    for (String laclasse in _classes) {
+      items.add(new DropdownMenuItem(value: laclasse, child: new Text(laclasse)));
+    }
+    return items;
+  }
+
   @override
   Widget build(BuildContext context) {
     final appBar = Padding(
@@ -65,12 +125,29 @@ class _RegisterPageState extends State<RegisterPage> {
             formFieldSpacing,
             _buildFormField('Email', LineIcons.envelope),
             formFieldSpacing,
-            _buildFormField('Téléphone', LineIcons.mobile_phone),
-            formFieldSpacing,
-            _buildFormField('Mot de Passe', LineIcons.lock),
+            _buildFormField('Téléphone', LineIcons.mobile_phone), 
             formFieldSpacing,
           ],
         ),
+      ),
+    );
+
+    final classeinput = Padding(
+      padding: EdgeInsets.only(top: 0.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Text("Selectionnez votre Classe: "),
+          new Container(
+            padding: new EdgeInsets.all(16.0),
+          ),
+          new DropdownButton(
+            value: _currentClasse,
+            items: _dropDownMenuItems,
+            onChanged: changedDropDownItem,
+          )
+        ],
       ),
     );
 
@@ -90,7 +167,6 @@ class _RegisterPageState extends State<RegisterPage> {
             onChanged: _handleGenderChange,
           ),
           Text("Feminin"),
-          
         ],
       ),
     );
@@ -139,6 +215,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: <Widget>[
                     pageTitle,
                     registerForm,
+                    classeinput,
                     gender,
                     submitBtn
                   ],
@@ -171,5 +248,11 @@ class _RegisterPageState extends State<RegisterPage> {
       style: TextStyle(color: Colors.black),
       cursorColor: Colors.black,
     );
+  }
+ 
+  void changedDropDownItem(String selectedClasse) {
+    setState(() {
+      _currentClasse = selectedClasse;
+    });
   }
 }
