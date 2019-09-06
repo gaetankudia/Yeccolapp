@@ -11,7 +11,8 @@ import 'package:yeccolapp/views/cours_details.dart';
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case landingViewRoute:
-      return MaterialPageRoute(builder: (context) => LandingPage());
+      //return MaterialPageRoute(builder: (context) => LandingPage());
+      return MaterialPageRoute(builder: (context) => LoginPage());
     case homeViewRoute:
       return MaterialPageRoute(builder: (context) => HomePage());
     case loginViewRoute:

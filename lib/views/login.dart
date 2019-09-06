@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     // Change Status Bar Color
     SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: primaryColor),
+      SystemUiOverlayStyle(statusBarColor: secondaryColor),
     );
     final pageTitle = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
