@@ -10,7 +10,7 @@ class Lecon {
 
   Lecon(this.id, this.name, this.photo, this.gender, this.age);
 }
-
+ 
 
 // Names generated at http://random-name-generator.info/
 final List<Lecon> lecons = [

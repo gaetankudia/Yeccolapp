@@ -133,12 +133,12 @@ class _RegisterPageState extends State<RegisterPage> {
     );
 
     final classeinput = Padding(
-      padding: EdgeInsets.only(top: 0.0),
+      padding: EdgeInsets.only(top: 30.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Text("Selectionnez votre Classe: "),
+          //new Icon(LineIcons.user),
           new Container(
             padding: new EdgeInsets.all(16.0),
           ),

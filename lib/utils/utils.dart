@@ -48,7 +48,7 @@ class AvailableImages {
 
   static const coursanglais = {
     'assetImage' : AssetImage('assets/images/woman4.jpg'),
-    'assetPath' : 'assets/images/woman4.jpg',
+    'assetPath' : 'assets/images/english.jpg',
   };
 
   static const courshistoire = {

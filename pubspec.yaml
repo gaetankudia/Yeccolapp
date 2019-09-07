@@ -46,7 +46,8 @@ flutter:
    - assets/images/user1.jpg
    - assets/images/latin.jpg
    - assets/images/philosophie2.jpg
-   - assets/images/histoire.jpg 
+   - assets/images/histoire.jpg
+   - assets/images/english.jpg 
    - assets/images/home_page.png
    - assets/images/logo.png
    - assets/images/empty.png
