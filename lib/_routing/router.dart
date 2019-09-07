@@ -3,6 +3,7 @@ import 'package:yeccolapp/_routing/routes.dart';
 import 'package:yeccolapp/views/lecon_details.dart';
 import 'package:yeccolapp/views/home.dart';
 import 'package:yeccolapp/views/landing.dart';
+import 'package:yeccolapp/views/activateaccount.dart';
 import 'package:yeccolapp/views/login.dart';
 import 'package:yeccolapp/views/register.dart';
 import 'package:yeccolapp/views/reset_password.dart';
@@ -13,6 +14,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case landingViewRoute:
       //return MaterialPageRoute(builder: (context) => LandingPage());
       return MaterialPageRoute(builder: (context) => LoginPage());
+    case activateaccountViewRoute:
+      //return MaterialPageRoute(builder: (context) => LandingPage());
+      return MaterialPageRoute(builder: (context) => ActivateAccountPage());
     case homeViewRoute:
       return MaterialPageRoute(builder: (context) => HomePage());
     case loginViewRoute:

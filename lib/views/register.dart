@@ -139,6 +139,7 @@ class _RegisterPageState extends State<RegisterPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           //new Icon(LineIcons.user),
+           
           new Container(
             padding: new EdgeInsets.all(16.0),
           ),
@@ -152,7 +153,7 @@ class _RegisterPageState extends State<RegisterPage> {
     );
 
     final gender = Padding(
-      padding: EdgeInsets.only(top: 0.0),
+      padding: EdgeInsets.only(top: 30.0),
       child: Row(
         children: <Widget>[
           Radio(
