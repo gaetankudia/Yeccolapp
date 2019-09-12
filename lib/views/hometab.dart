@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:yeccolapp/utils/colors.dart';
-import 'package:yeccolapp/views/tabs/cours.dart';
-import 'package:yeccolapp/views/tabs/lecon.dart';
-import 'package:yeccolapp/views/tabs/notifications.dart';
-import 'package:yeccolapp/views/tabs/profile.dart';
+import 'package:yeccolapp/utils/colors.dart'; 
+import 'package:yeccolapp/views/hometabs/home.dart'; 
+import 'package:yeccolapp/views/hometabs/notifications.dart'; 
+import 'package:yeccolapp/views/hometabs/profile.dart';
 import 'package:line_icons/line_icons.dart';
 
-class HomePage extends StatefulWidget {
+class HomePageTab extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePageTab> {
   int _currentIndex = 0;
   final List<Widget> _pages = [
-    LeconsPage(),
-    //CoursPage(),
-    NotificationsPage(),
+    HomePage(), 
+    NotificationsPage(), 
     ProfilePage()
   ];
 
@@ -39,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         BottomNavigationBarItem(
           icon: Icon(Icons.rss_feed),
           title: Text(
-            'Cours',
+            'Accueil',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
@@ -50,13 +48,13 @@ class _HomePageState extends State<HomePage> {
         //     style: TextStyle(fontWeight: FontWeight.bold),
         //   ),
         // ),
-        BottomNavigationBarItem(
-          icon: Icon(LineIcons.bell),
-          title: Text(
-            'Notifications',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
+         BottomNavigationBarItem(
+           icon: Icon(LineIcons.bell),
+           title: Text(
+             'Notifications',
+             style: TextStyle(fontWeight: FontWeight.bold),
+           ),
+         ),
         BottomNavigationBarItem(
           icon: Icon(LineIcons.user),
           title: Text(

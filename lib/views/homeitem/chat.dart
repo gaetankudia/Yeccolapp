@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:yeccolapp/_routing/routes.dart';
-import 'package:yeccolapp/models/cours.dart';
+import 'package:yeccolapp/models/chat.dart';
 import 'package:yeccolapp/models/user.dart';
 import 'package:yeccolapp/utils/colors.dart';
 

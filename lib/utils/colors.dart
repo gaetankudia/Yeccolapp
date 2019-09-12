@@ -19,6 +19,13 @@ const primaryGradient = const LinearGradient(
   end: Alignment.bottomCenter,
 );
 
+const secondaryGradient = const LinearGradient(
+  colors: const [secondaryDark, secondaryLight],
+  stops: const [0.0, 1.0],
+  begin: Alignment.topCenter,
+  end: Alignment.bottomCenter,
+);
+
 const chatBubbleGradient = const LinearGradient(
   colors: const [Color(0xFFFD60A3), Color(0xFFFF8961)],
   begin: Alignment.topRight,

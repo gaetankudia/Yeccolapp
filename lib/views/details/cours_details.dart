@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
-import 'package:yeccolapp/models/user.dart';
+import 'package:yeccolapp/models/contenucours.dart';
 import 'package:yeccolapp/utils/colors.dart';
 import 'package:line_icons/line_icons.dart';
 
 class CoursDetailsPage extends StatelessWidget {
-  final int userId;
+  final int coursId;
 
-  const CoursDetailsPage({Key key, this.userId}) : super(key: key);
+  const CoursDetailsPage({Key key, this.coursId}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final User user = users.singleWhere((user) => user.id == userId);
+    final Cours cours = listcours.singleWhere((cours) => cours.id == coursId);
 
     // final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
@@ -34,16 +34,16 @@ class CoursDetailsPage extends StatelessWidget {
       ),
     );
 
-    final userImage = Stack(
+    final leconImage = Stack(
       children: <Widget>[
         Hero(
-          tag: user.photo,
+          tag: cours.photo,
           child: Container(
             height: 350.0,
             width: deviceWidth,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(user.photo),
+                image: AssetImage(cours.photo),
                 fit: BoxFit.cover,
               ),
             ),
@@ -53,12 +53,12 @@ class CoursDetailsPage extends StatelessWidget {
       ],
     );
 
-    final userName = Container(
+    final leconName = Container(
         padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
         child: Row(
           children: <Widget>[
             Text(
-              user.name,
+              cours.name,
               style: TextStyle(
                 fontSize: 30.0,
                 fontWeight: FontWeight.bold,
@@ -79,11 +79,11 @@ class CoursDetailsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Icon(
-                      user.gender == 'M' ? LineIcons.mars : LineIcons.venus,
+                      LineIcons.mars,
                       color: Colors.white,
                     ),
                     Text(
-                      user.age.toString(),
+                      cours.age.toString(),
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
@@ -96,19 +96,7 @@ class CoursDetailsPage extends StatelessWidget {
             )
           ],
         ));
-
-    final userLocation = Container(
-      padding: EdgeInsets.only(left: 20.0, right: 20.0),
-      child: Text(
-        user.location,
-        style: TextStyle(
-          fontSize: 18.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.grey.withOpacity(0.8),
-        ),
-      ),
-    );
-
+ 
     final aboutUser = Padding(
       padding: EdgeInsets.all(20.0),
       child: Material(
@@ -139,9 +127,9 @@ class CoursDetailsPage extends StatelessWidget {
               ),
               SizedBox(
                 height: 2.0,
-              ), //${user.name}
+              ), //${cours.name}
               Text(
-                "Lorem ipsum dolor sit amet, consectetur adetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra..",
+                "Lorem ipsum dolor sit amet, consectetur  Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur cing elit. Vestibulum id neque libero. Donec finibus sem viverra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero.d neque libero. Donec finibus sem viverra Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra..",
                 style: TextStyle(
                   color: Colors.black54,
                   fontWeight: FontWeight.w600,
@@ -175,7 +163,7 @@ class CoursDetailsPage extends StatelessWidget {
                 height: 5.0,
               ),
               Text(
-                "yeccolapp",
+                "Autres leçons",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
@@ -185,11 +173,7 @@ class CoursDetailsPage extends StatelessWidget {
               SizedBox(
                 height: 2.0,
               ),
-              Wrap(
-                children: userHobbies
-                    .map((hobby) => _buildHobbiesCards(hobby))
-                    .toList(),
-              )
+               
             ],
           ),
         ),
@@ -201,9 +185,8 @@ class CoursDetailsPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            userImage,
-            userName,
-            userLocation,
+            leconImage,
+            leconName, 
             aboutUser,
             hobbies
           ],

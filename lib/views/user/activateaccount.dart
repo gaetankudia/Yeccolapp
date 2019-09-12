@@ -75,7 +75,7 @@ class _ActivateAccountPageState extends State<ActivateAccountPage> {
           elevation: 10.0,
           shadowColor: Colors.white70,
           child: MaterialButton(
-            onPressed: () => Navigator.of(context).pushNamed(activateaccountViewRoute),
+            onPressed: () => Navigator.of(context).pushNamed(lecon_enabledViewRoute),
             child: Text(
               'Activer',
               style: TextStyle(

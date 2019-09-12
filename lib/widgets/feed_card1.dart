@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:yeccolapp/_routing/routes.dart';
-import 'package:yeccolapp/models/lecon.dart';
+import 'package:yeccolapp/models/cours.dart'; 
 import 'package:line_icons/line_icons.dart';
 
 class FeedCard1 extends StatelessWidget {
-  final Feed feed;
+  final Feedcours feed;
 
   const FeedCard1({Key key, this.feed}) : super(key: key);
   @override

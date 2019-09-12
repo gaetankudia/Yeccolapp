@@ -11,7 +11,7 @@ class LeconDetailsPage extends StatelessWidget {
   const LeconDetailsPage({Key key, this.leconId}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final Lecon lecon = lecons.singleWhere((lecon) => lecon.id == leconId);
+    final Lecon lecon = listlecons.singleWhere((lecon) => lecon.id == leconId);
 
     // final deviceHeight = MediaQuery.of(context).size.height;
     final deviceWidth = MediaQuery.of(context).size.width;
@@ -79,7 +79,7 @@ class LeconDetailsPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Icon(
-                      lecon.gender == 'M' ? LineIcons.mars : LineIcons.venus,
+                      LineIcons.venus,
                       color: Colors.white,
                     ),
                     Text(
@@ -97,18 +97,7 @@ class LeconDetailsPage extends StatelessWidget {
           ],
         ));
 
-    final leconLocation = Container(
-      padding: EdgeInsets.only(left: 20.0, right: 20.0),
-      child: Text(
-        lecon.location,
-        style: TextStyle(
-          fontSize: 18.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.grey.withOpacity(0.8),
-        ),
-      ),
-    );
-
+  
     final aboutUser = Padding(
       padding: EdgeInsets.all(20.0),
       child: Material(
@@ -185,11 +174,7 @@ class LeconDetailsPage extends StatelessWidget {
               SizedBox(
                 height: 2.0,
               ),
-              Wrap(
-                children: leconHobbies
-                    .map((hobby) => _buildHobbiesCards(hobby))
-                    .toList(),
-              )
+               
             ],
           ),
         ),
@@ -202,8 +187,7 @@ class LeconDetailsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             leconImage,
-            leconName,
-            leconLocation,
+            leconName, 
             aboutUser,
             hobbies
           ],

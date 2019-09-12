@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:yeccolapp/models/user.dart';
 import 'package:yeccolapp/utils/colors.dart';
+import 'package:yeccolapp/_routing/routes.dart';
 import 'package:line_icons/line_icons.dart';
 
-class ProfilePage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final User user = users[0];
 
   @override
@@ -19,7 +20,7 @@ class ProfilePage extends StatelessWidget {
         children: <Widget>[
           _buildUserStats('Cours', '12'),
           _buildUserStats('Concours', '4'),
-          _buildUserStats('Lecons lues', '19'),
+          _buildUserStats('Livres', '19'),
         ],
       ),
     );
@@ -42,14 +43,14 @@ class ProfilePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            user.name,
+            "Yeccolapp",
             style: TextStyle(
               fontSize: 24.0,
               fontWeight: FontWeight.w900,
             ),
           ),
           Text(
-            user.location,
+            "Compte Actif",
             style: TextStyle(
               color: Colors.grey.withOpacity(0.6),
               fontSize: 20.0,
@@ -102,52 +103,27 @@ class ProfilePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
         shadowColor: Colors.white,
         child: Container(
-          height: 200.0,
+          height: 290.0,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Column(
             children: <Widget>[
-              _buildIconTile(Icons.favorite, Colors.red, 'Likes'),
+              _buildIconTile(Icons.note, Colors.red, 'Mes Léçons',context, leconsViewRoute),
               hr,
-              _buildIconTile(LineIcons.eye, Colors.green, 'Visitors'),
+              _buildIconTile(LineIcons.book, Colors.amberAccent, 'Mes Livres',context, livresViewRoute),
               hr,
-              _buildIconTile(LineIcons.users, Colors.purpleAccent, 'Groups'),
+              _buildIconTile(LineIcons.question_circle, Colors.greenAccent, 'Concours',context, concoursViewRoute),
+               hr,
+              _buildIconTile(LineIcons.bell, Colors.lightBlue, 'Resultat Jury catholiques',context, resultatsViewRoute),
             ],
           ),
         ),
       ),
     );
 
-    final thirdCard = Padding(
-      padding: EdgeInsets.only(right: 20.0, left: 20.0, bottom: 30.0),
-      child: Material(
-        elevation: 5.0,
-        borderRadius: BorderRadius.circular(8.0),
-        shadowColor: Colors.white,
-        child: Container(
-          height: 350.0,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8.0),
-          ),
-          child: Column(
-            children: <Widget>[
-              _buildIconTile(LineIcons.user_md, Colors.red, 'j\'ai perdu mes informations'),
-              hr,
-              _buildIconTile(LineIcons.user_secret, Colors.blue, 'Changer Mot de passe'),
-              hr,
-              _buildIconTile(LineIcons.money, Colors.orangeAccent, 'Abonnement'),
-              hr,
-              _buildIconTile(LineIcons.reply, Colors.black, 'A propos de Yeccolapp'),
-              hr,
-              //_buildIconTile(LineIcons.cogs, Colors.grey.withOpacity(0.6), 'Settings'),
-            ],
-          ),
-        ),
-      ),
-    );
+   
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -164,12 +140,12 @@ class ProfilePage extends StatelessWidget {
                       ),
                       Container(
                         height: 250.0,
-                        decoration: BoxDecoration(gradient: primaryGradient),
+                        decoration: BoxDecoration(gradient: secondaryGradient),
                       ),
                       Positioned(top: 100, right: 0, left: 0, child: userInfo)
                     ],
                   ),
-                   thirdCard
+                   secondCard, 
                 ],
               ),
             ),
@@ -202,8 +178,10 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildIconTile(IconData icon, Color color, String title) {
-    return ListTile(
+  Widget _buildIconTile(IconData icon, Color color, String title,BuildContext context, String routing) {
+    
+    return ListTile( 
+      onTap: () => Navigator.pushNamed(context, routing),
       title: Text(title, style: TextStyle(fontWeight: FontWeight.bold),),
       leading: Container(
         height: 30.0,

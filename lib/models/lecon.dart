@@ -1,20 +1,19 @@
 import 'package:yeccolapp/models/contenulecons.dart';
 import 'package:yeccolapp/utils/utils.dart';
 
-class Feed {
-  int id, userId;
-  String createdAt;
+class Feedlecons {
+  int id;
+  String name;
   String description =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra.';
-  String bannerImg = AvailableImages.postBanner['assetPath'];
-  String userName, userImage;
-
-  Feed(this.id, this.createdAt, this.userId, this.userName, this.userImage);
+  String bannerImg = AvailableImages.postBanner['assetPath']; 
+  String leconImage;
+  Feedlecons(this.id, this.name,this.description ,this.leconImage);
 }
 
-final List<Feed> feeds = [
-  Feed(1, '19 Aug', lecons[0].id, lecons[0].name, lecons[0].photo),
-  Feed(2, '20 Aug', lecons[1].id, lecons[1].name, lecons[1].photo),
-  Feed(3, '22 Aug', lecons[2].id, lecons[2].name, lecons[2].photo),
-  Feed(4, '1 Sept', lecons[3].id,lecons[3].name, lecons[3].photo),
+final List<Feedlecons> feeds = [
+  Feedlecons(1, listlecons[0].name,listlecons[0].description, listlecons[0].photo),
+  Feedlecons(2, listlecons[1].name,listlecons[1].description, listlecons[1].photo),
+  Feedlecons(3, listlecons[2].name,listlecons[2].description, listlecons[2].photo),
+  Feedlecons(4, listlecons[3].name,listlecons[4].description, listlecons[3].photo),
 ];

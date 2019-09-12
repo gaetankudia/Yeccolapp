@@ -1,16 +1,20 @@
-import 'package:yeccolapp/models/user.dart';
+import 'package:yeccolapp/models/contenucours.dart';
+import 'package:yeccolapp/utils/utils.dart';
 
-class Chat {
-  int id, userId, unreadCount;
+class Feedcours {
+  int id, userId;
+  String createdAt;
+  String description =
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id neque libero. Donec finibus sem viverra.';
+  String bannerImg = AvailableImages.postBanner['assetPath'];
   String userName, userImage;
-  String message;
 
-  Chat(this.id, this.userId, this.userName, this.userImage, this.unreadCount, this.message);
+  Feedcours(this.id, this.createdAt, this.userId, this.userName, this.userImage);
 }
 
-List<Chat> chats = [
-  Chat(1, users[1].id, users[1].name, users[1].photo, 3, "Hey! How's it going?"),
-  Chat(2, users[2].id, users[2].name, users[2].photo, 1, "What kind of music do you like?"),
-  Chat(3, users[3].id, users[3].name, users[3].photo, 0, "Sound good to me."),
-  Chat(4, users[4].id, users[4].name, users[4].photo, 0, "Sure, see you on Saturday."),
+final List<Feedcours> feeds = [
+  Feedcours(1, '19 Aug', listcours[0].id, listcours[0].name, listcours[0].photo),
+  Feedcours(2, '20 Aug', listcours[1].id, listcours[1].name, listcours[1].photo),
+  Feedcours(3, '22 Aug', listcours[2].id, listcours[2].name, listcours[2].photo),
+  Feedcours(4, '1 Sept', listcours[3].id,listcours[3].name, listcours[3].photo),
 ];
