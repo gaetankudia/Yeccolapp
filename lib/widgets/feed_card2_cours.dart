@@ -12,10 +12,10 @@ class FeedCard2 extends StatelessWidget {
       left: 0,
       top: 15.0,
       child: InkWell(
-        onTap: () => Navigator.pushNamed(context, leconDetailsViewRoute,
-            arguments: feed.userId),
+        onTap: () => Navigator.pushNamed(context, coursDetailsViewRoute,
+            arguments: feed.id),
         child: Hero(
-          tag: feed.userImage,
+          tag: feed.coursImage,
           child: Material(
             elevation: 5.0,
             borderRadius: BorderRadius.circular(14.0),
@@ -25,7 +25,7 @@ class FeedCard2 extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(14.0),
                 image: DecorationImage(
-                  image: AssetImage(feed.userImage),
+                  image: AssetImage(feed.coursImage),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -44,7 +44,7 @@ class FeedCard2 extends StatelessWidget {
     );
 
     final userName = Text(
-      feed.userName,
+      feed.name,
       style: TextStyle(
         color: Colors.black,
         fontWeight: FontWeight.bold,

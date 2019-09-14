@@ -48,7 +48,7 @@ class FeedCard3 extends StatelessWidget {
     final descriptionText = Container(
       height: 80.0,
       child: Text(
-        feed.description,
+        feed.contenu,
         style: TextStyle(
           color: Colors.grey,
           fontWeight: FontWeight.w600,

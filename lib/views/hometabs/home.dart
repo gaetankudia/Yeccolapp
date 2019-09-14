@@ -103,20 +103,22 @@ class HomePage extends StatelessWidget {
         borderRadius: BorderRadius.circular(8.0),
         shadowColor: Colors.white,
         child: Container(
-          height: 290.0,
+          height: 360.0,
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Column(
             children: <Widget>[
-              _buildIconTile(Icons.note, Colors.red, 'Mes Léçons',context, leconsViewRoute),
+              _buildIconTile(Icons.note, Colors.red, 'Mes Cours',context, coursViewRoute),
               hr,
               _buildIconTile(LineIcons.book, Colors.amberAccent, 'Mes Livres',context, livresViewRoute),
               hr,
-              _buildIconTile(LineIcons.question_circle, Colors.greenAccent, 'Concours',context, concoursViewRoute),
+              _buildIconTile(LineIcons.question_circle, Colors.greenAccent, 'Je participe Concours',context, concoursViewRoute),
                hr,
-              _buildIconTile(LineIcons.bell, Colors.lightBlue, 'Resultat Jury catholiques',context, resultatsViewRoute),
+              _buildIconTile(LineIcons.bell, Colors.lightBlue, 'Mes Resultats Jury catholiques',context, resultatsViewRoute),
+              hr,
+              _buildIconTile(LineIcons.archive, Colors.deepPurple, 'Mes Items',context, itemsViewRoute),
             ],
           ),
         ),

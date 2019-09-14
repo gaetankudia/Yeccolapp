@@ -37,13 +37,13 @@ class LeconDetailsPage extends StatelessWidget {
     final leconImage = Stack(
       children: <Widget>[
         Hero(
-          tag: lecon.photo,
+          tag: lecon.leconImage,
           child: Container(
             height: 350.0,
             width: deviceWidth,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage(lecon.photo),
+                image: AssetImage(lecon.leconImage),
                 fit: BoxFit.cover,
               ),
             ),

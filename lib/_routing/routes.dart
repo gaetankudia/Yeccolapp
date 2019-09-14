@@ -15,3 +15,4 @@ const String livresViewRoute = 'livres';
 const String resultatsViewRoute= 'resultats';
 const String concoursViewRoute= 'concours';
 const String coursViewRoute= 'concours';
+const String itemsViewRoute= 'items';

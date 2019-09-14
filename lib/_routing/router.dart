@@ -9,6 +9,7 @@ import 'package:yeccolapp/views/homeitem/cours.dart';
 import 'package:yeccolapp/views/homeitem/livre.dart'; 
 import 'package:yeccolapp/views/homeitem/concours.dart';
 import 'package:yeccolapp/views/homeitem/resultat.dart'; 
+import 'package:yeccolapp/views/homeitem/items.dart'; 
 import 'package:yeccolapp/views/user/activateaccount.dart';
 import 'package:yeccolapp/views/user/login.dart';
 import 'package:yeccolapp/views/user/register.dart';
@@ -19,6 +20,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case landingViewRoute:
       //return MaterialPageRoute(builder: (context) => LandingPage());
       return MaterialPageRoute(builder: (context) => LoginPage());
+    case itemsViewRoute:
+      //return MaterialPageRoute(builder: (context) => LandingPage());
+      return MaterialPageRoute(builder: (context) => ItemsPage());
     case leconsViewRoute:
       //return MaterialPageRoute(builder: (context) => LandingPage());
       return MaterialPageRoute(builder: (context) => LeconsPage());

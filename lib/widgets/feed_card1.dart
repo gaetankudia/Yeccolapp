@@ -11,16 +11,16 @@ class FeedCard1 extends StatelessWidget {
   Widget build(BuildContext context) {
     final userimage = InkWell(
       onTap: () => Navigator.pushNamed(context, leconDetailsViewRoute,
-          arguments: feed.userId),
+          arguments: feed.id),
       child: Hero(
-        tag: feed.userImage,
+        tag: feed.coursImage,
         child: Container(
           margin: EdgeInsets.only(right: 10.0),
           height: 40.0,
           width: 40.0,
           decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(feed.userImage), fit: BoxFit.cover),
+                image: AssetImage(feed.coursImage), fit: BoxFit.cover),
             borderRadius: BorderRadius.circular(7.0),
           ),
         ),
@@ -31,7 +31,7 @@ class FeedCard1 extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          feed.userName,
+          feed.name,
           style: TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,

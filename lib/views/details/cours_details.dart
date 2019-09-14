@@ -83,7 +83,7 @@ class CoursDetailsPage extends StatelessWidget {
                       color: Colors.white,
                     ),
                     Text(
-                      cours.age.toString(),
+                      "fff",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
