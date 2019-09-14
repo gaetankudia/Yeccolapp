@@ -6,7 +6,7 @@ class ItemsPage extends StatelessWidget {
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 30.0),
       child: Text(
-        "Resultats",
+        "Items",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,

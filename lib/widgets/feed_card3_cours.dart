@@ -37,7 +37,7 @@ class FeedCard3 extends StatelessWidget {
     );
 
     final postDate = Text(
-      feed.createdAt,
+      "à jour",
       style: TextStyle(
         color: Colors.grey.withOpacity(0.6),
         fontWeight: FontWeight.bold,
