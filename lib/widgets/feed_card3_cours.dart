@@ -46,16 +46,21 @@ class FeedCard3 extends StatelessWidget {
 
     final userName = Text(
       feed.name,
+      
       style: TextStyle(
+        
         color: Colors.black,
         fontWeight: FontWeight.bold,
         fontSize: 16.0,
       ),
+      
     );
 
     final descriptionText = Container(
       height: 80.0,
+      
       child: Text(
+        
         feed.description,
         style: TextStyle(
           color: Colors.grey,

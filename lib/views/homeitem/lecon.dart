@@ -32,24 +32,24 @@ class LeconsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     pageTitle, 
-                    FeedCard3(feed: feeds[0]),
+                    FeedCard3(feed: feedslecon[0]),
                     SizedBox(
                       height: 10.0,
                     ),
                     FeedCard2(
-                      feed: feeds[1],
+                      feed: feedslecon[1],
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     FeedCard3(
-                      feed: feeds[2],
+                      feed: feedslecon[2],
                     ),
                     SizedBox(
                       height: 10.0,
                     ),
                     FeedCard2(
-                      feed: feeds[3],
+                      feed: feedslecon[3],
                     ),
                   ],
                 ),

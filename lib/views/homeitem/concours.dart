@@ -6,7 +6,7 @@ class ConcoursPage extends StatelessWidget {
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 30.0),
       child: Text(
-        "Concours",
+        "Concours Yeccolapp",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,

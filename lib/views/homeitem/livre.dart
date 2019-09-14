@@ -9,7 +9,7 @@ class LivresPage extends StatelessWidget {
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 30.0),
       child: Text(
-        "Livres",
+        "Mes Livres",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,

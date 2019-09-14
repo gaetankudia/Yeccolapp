@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart' ;
-import 'package:yeccolapp/models/cours.dart'; 
-
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+ 
+import 'package:yeccolapp/models/cours.dart';  
 import 'package:yeccolapp/widgets/feed_card2_cours.dart';
 import 'package:yeccolapp/widgets/feed_card3_cours.dart'; 
 class CoursPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class CoursPage extends StatelessWidget {
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 30.0),
       child: Text(
-        "Cours",
+        "Mes Cours",
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.black,
@@ -19,8 +20,7 @@ class CoursPage extends StatelessWidget {
       ),
     );
 
-    
-
+   
      return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -64,4 +64,6 @@ class CoursPage extends StatelessWidget {
       ),
     );
   }
+
+   
 }

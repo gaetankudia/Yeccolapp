@@ -114,7 +114,7 @@ class HomePage extends StatelessWidget {
               hr,
               _buildIconTile(LineIcons.book, Colors.amberAccent, 'Mes Livres',context, livresViewRoute),
               hr,
-              _buildIconTile(LineIcons.question_circle, Colors.greenAccent, 'Je participe Concours',context, concoursViewRoute),
+              _buildIconTile(LineIcons.question_circle, Colors.greenAccent, 'Je participe au Concours',context, concoursViewRoute),
                hr,
               _buildIconTile(LineIcons.bell, Colors.lightBlue, 'Mes Resultats Jury catholiques',context, resultatsViewRoute),
               hr,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:yeccolapp/_routing/routes.dart';
 import 'package:yeccolapp/models/contenucours.dart';
+import 'package:yeccolapp/models/contenulecons.dart';
 import 'package:yeccolapp/utils/colors.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -34,7 +36,7 @@ class CoursDetailsPage extends StatelessWidget {
       ),
     );
 
-    final leconImage = Stack(
+    final coursImage = Stack(
       children: <Widget>[
         Hero(
           tag: cours.photo,
@@ -53,7 +55,7 @@ class CoursDetailsPage extends StatelessWidget {
       ],
     );
 
-    final leconName = Container(
+    final coursName = Container(
         padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
         child: Row(
           children: <Widget>[
@@ -97,7 +99,7 @@ class CoursDetailsPage extends StatelessWidget {
           ],
         ));
  
-    final aboutUser = Padding(
+    final coursDescription = Padding(
       padding: EdgeInsets.all(20.0),
       child: Material(
         elevation: 5.0,
@@ -141,81 +143,126 @@ class CoursDetailsPage extends StatelessWidget {
         ),
       ),
     );
-
-    final hobbies = Padding(
-      padding: EdgeInsets.only(bottom: 20.0, left: 20.0, right: 20.0),
-      child: Material(
-        elevation: 5.0,
-        borderRadius: BorderRadius.circular(12.0),
-        shadowColor: Colors.white,
-        child: Container(
-          padding: EdgeInsets.all(15.0),
-          width: deviceWidth,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.0),
-            color: Colors.white,
-          ),
-          constraints: BoxConstraints(minHeight: 100.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              SizedBox(
-                height: 5.0,
-              ),
-              Text(
-                "Autres leçons",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: 2.0,
-              ),
-               
-            ],
-          ),
-        ),
+ 
+    final leconList = Container(
+      height: 500.0,
+      child: ListView(
+        children: listlecons.map((lecon) => _buildLeconTile(lecon, context)).toList(),
       ),
     );
-
+ 
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            leconImage,
-            leconName, 
-            aboutUser,
-            hobbies
+            coursImage,
+            coursName, 
+            coursDescription,
+            //leconList,
           ],
         ),
       ),
     );
   }
-
-  Widget _buildHobbiesCards(String name) {
-    return Container(
-      padding: EdgeInsets.only(
-        left: 10.0,
-        right: 10.0,
-      ),
-      margin: EdgeInsets.only(right: 5.0, bottom: 3.0),
-      height: 30.0,
-      constraints: BoxConstraints(maxWidth: 80.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.0),
-        color: Colors.transparent,
-        border: Border.all(color: Colors.grey, width: 2.0),
-      ),
-      child: Center(
-          child: Text(
-        name,
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
+ 
+  Widget _buildLeconTile(Lecon lecon, BuildContext context) {
+    final unread = Positioned(
+      bottom: 9.0,
+      right: 0.0,
+      child: Container(
+        height: 25.0,
+        width: 25.0,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white, width: 2.0),
+          gradient: primaryGradient,
         ),
-      )),
+        child: Center(
+          child: Text(
+            lecon.unread.toString(),
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+
+    final leconImage = InkWell(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          leconDetailsViewRoute,
+          arguments: lecon.id,
+        );
+      },
+      child: Stack(
+        children: <Widget>[
+          Hero(
+            tag: lecon.leconImage,
+            child: Container(
+              margin: EdgeInsets.only(right: 8.0, bottom: 10.0),
+              height: 70.0,
+              width: 70.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(lecon.leconImage),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          lecon.unread == 0 ? Container() : unread
+        ],
+      ),
+    );
+
+    final leconContenu = Expanded(
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            leconDetailsViewRoute,
+            arguments: lecon.id,
+          );
+        },
+        child: Container(
+          padding: EdgeInsets.only(
+            left: 10.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Hero(
+                tag: lecon.name,
+                child: Text(
+                  lecon.name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+              Text(
+                lecon.contenu,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18.0,
+                  color: Colors.grey.withOpacity(0.6),
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+    return Container(
+      margin: EdgeInsets.only(bottom: 8.0),
+      child: Row(
+        children: <Widget>[leconImage, leconContenu],
+      ),
     );
   }
+  
 }
