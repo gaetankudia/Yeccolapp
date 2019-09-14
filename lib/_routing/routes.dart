@@ -14,5 +14,6 @@ const String leconsViewRoute = 'lecons';
 const String livresViewRoute = 'livres';
 const String resultatsViewRoute= 'resultats';
 const String concoursViewRoute= 'concours';
-const String coursViewRoute= 'concours';
+const String coursViewRoute= 'cours';
 const String itemsViewRoute= 'items';
+const String livreDetailsViewRoute= 'items';

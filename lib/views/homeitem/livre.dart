@@ -32,25 +32,7 @@ class LivresPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     pageTitle, 
-                    FeedCard3(feed: feeds[0]),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    FeedCard2(
-                      feed: feeds[1],
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    FeedCard3(
-                      feed: feeds[2],
-                    ),
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    FeedCard2(
-                      feed: feeds[3],
-                    ),
+                     
                   ],
                 ),
               )

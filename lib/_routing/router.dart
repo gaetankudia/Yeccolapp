@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:yeccolapp/_routing/routes.dart';
 import 'package:yeccolapp/views/details/lecon_details.dart'; 
 import 'package:yeccolapp/views/details/cours_details.dart';
+import 'package:yeccolapp/views/details/livre_details.dart';
 import 'package:yeccolapp/views/hometab.dart';
 import 'package:yeccolapp/views/hometabs/home.dart';
 import 'package:yeccolapp/views/homeitem/lecon.dart'; 
@@ -55,6 +56,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => CoursDetailsPage(coursId: settings.arguments));
     case leconDetailsViewRoute:
       return MaterialPageRoute(builder: (context) => LeconDetailsPage(leconId: settings.arguments));
+      break;
+    case livreDetailsViewRoute:
+      return MaterialPageRoute(builder: (context) => LivreDetailsPage(livreId: settings.arguments));
       break;
     default:
        return MaterialPageRoute(builder: (context) => LoginPage());
