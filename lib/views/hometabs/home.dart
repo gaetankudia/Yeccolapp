@@ -111,14 +111,15 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               _buildIconTile(Icons.note, Colors.red, 'Mes Cours',context, coursViewRoute),
-              hr,
+                hr,
               _buildIconTile(LineIcons.book, Colors.amberAccent, 'Mes Livres',context, livresViewRoute),
-              hr,
+                hr,
               _buildIconTile(LineIcons.question_circle, Colors.greenAccent, 'Je participe au Concours',context, concoursViewRoute),
                hr,
-              _buildIconTile(LineIcons.bell, Colors.lightBlue, 'Mes Resultats Jury catholiques',context, resultatsViewRoute),
-              hr,
+                 
               _buildIconTile(LineIcons.archive, Colors.deepPurple, 'Mes Items',context, itemsViewRoute),
+               hr,
+              _buildIconTile(LineIcons.bell, Colors.lightBlue, 'Mes Resultats Jury catholiques',context, resultatsViewRoute),
             ],
           ),
         ),

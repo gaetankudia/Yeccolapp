@@ -4,8 +4,7 @@ import 'package:yeccolapp/views/details/lecon_details.dart';
 import 'package:yeccolapp/views/details/cours_details.dart';
 import 'package:yeccolapp/views/details/livre_details.dart';
 import 'package:yeccolapp/views/hometab.dart';
-import 'package:yeccolapp/views/hometabs/home.dart';
-import 'package:yeccolapp/views/homeitem/lecon.dart'; 
+import 'package:yeccolapp/views/hometabs/home.dart'; 
 import 'package:yeccolapp/views/homeitem/cours.dart'; 
 import 'package:yeccolapp/views/homeitem/livre.dart'; 
 import 'package:yeccolapp/views/homeitem/concours.dart';
@@ -24,9 +23,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case itemsViewRoute:
       //return MaterialPageRoute(builder: (context) => LandingPage());
       return MaterialPageRoute(builder: (context) => ItemsPage());
-    case leconsViewRoute:
-      //return MaterialPageRoute(builder: (context) => LandingPage());
-      return MaterialPageRoute(builder: (context) => LeconsPage());
+    
     case coursViewRoute:
       //return MaterialPageRoute(builder: (context) => LandingPage());
       return MaterialPageRoute(builder: (context) => CoursPage());
